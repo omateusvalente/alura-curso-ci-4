@@ -11,11 +11,11 @@ jobs:
     - name: "Configure AWS Credentials"
     # You may pin to the exact commit or the version.
     # uses: aws-actions/configure-aws-credentials@a03048d87541d1d9fcf2ecf528a4a65ba9bd7838
-    uses: aws-actions/configure-aws-credentials@v5.0.0
-    with:
+      uses: aws-actions/configure-aws-credentials@v5.0.0
+      with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2 
     
-    - name: Obtendo arquivo da tarefa
+    - name: "Obtendo arquivo da tarefa"
       run: aws ecs describe-task-defition --task-defition Tarefa_API-GO --query taskdefition > taskdefition.json
