@@ -26,7 +26,7 @@ jobs:
       with:
         task-definition: task-definition.json
         container-name: go
-        image: omateusvalente/go_ci:{{githut.row_number}}
+        image: omateusvalente/go_ci:{{githut.run_number}}
         environment-variables: |
           HOST=${{ secrets.DBHOST }}
           DBPORT=${{ secrets.DBPORT }}
