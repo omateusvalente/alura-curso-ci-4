@@ -8,3 +8,5 @@ jobs:
   ECS:
     runs-on: ubuntu-latest
     steps: 
+    - name: Obtendo arquivo da tarefa
+      run: aws ecs describe-task-defition --task-defition Tarefa_API-GO --query taskdefition > taskdefition.json
